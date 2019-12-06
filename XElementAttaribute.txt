@@ -1,0 +1,40 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            string str =  "<DATASET> <DATA>"
+                        + "<FI101201 MID=\"173\" DOCID=\"1055\" INVCNUMB=\"09:45:40.213000\" INVCDATE=\"2019-12-06\" POSTINGDT=\"2019-12-06\" CONTROLNO=\"20192020\" PERIODID=\"71\" CURRENCYID=\"3\" CONVRATE=\"1.000000\" INVCAMOUNT=\"0.00\" FCAMOUNT=\"0.000000\" BILLTYPEID=\"0\" DUEDATE=\"2019-12-16\" ACCOUNTID=\"76\" SLID=\"66\" DBCRTYPE=\"C\" PURCHBILLNO=\"3434\" BILLDATE=\"2019-12-06\" statusid=\"0\" BILLPASS=\" \" PARKED=\"0\" ISAUTH=\"0\" ISCOMPLETE=\"0\" CREATEDBY=\"316\" CREATEDON=\"2019-12-06T09:45:40.210\" ISRELEASE=\"0\" ISACTIVE=\"1\" ADVANCEAMT=\"0.000000\" DOCENTRYTYPEID=\"992\" SELORGSTRUCID=\"0\" PURCHINVCNUMB=\"\" PURCHINVCDATE=\"2019-12-06\" BUID=\"1\" />"
+                        + "<FI101201 MID=\"173\" DOCID=\"1055\" INVCNUMB=\"09:45:40.213000\" INVCDATE=\"2019-12-06\" POSTINGDT=\"2019-12-06\" CONTROLNO=\"20192020\" PERIODID=\"71\" CURRENCYID=\"3\" CONVRATE=\"1.000000\" INVCAMOUNT=\"0.00\" FCAMOUNT=\"0.000000\" BILLTYPEID=\"0\" DUEDATE=\"2019-12-16\" ACCOUNTID=\"76\" SLID=\"66\" DBCRTYPE=\"C\" PURCHBILLNO=\"3434\" BILLDATE=\"2019-12-06\" statusid=\"0\" BILLPASS=\" \" PARKED=\"0\" ISAUTH=\"0\" ISCOMPLETE=\"0\" CREATEDBY=\"316\" CREATEDON=\"2019-12-06T09:45:40.210\" ISRELEASE=\"0\" ISACTIVE=\"1\" ADVANCEAMT=\"0.000000\" DOCENTRYTYPEID=\"992\" SELORGSTRUCID=\"0\" PURCHINVCNUMB=\"\" PURCHINVCDATE=\"2019-12-06\" BUID=\"2\" />"
+                        + "</DATA> <DATA>"
+                        +"<FI101201 MID=\"173\" DOCID=\"1055\" INVCNUMB=\"09:45:40.213000\" INVCDATE=\"2019-12-06\" POSTINGDT=\"2019-12-06\" CONTROLNO=\"20192020\" PERIODID=\"71\" CURRENCYID=\"3\" CONVRATE=\"1.000000\" INVCAMOUNT=\"0.00\" FCAMOUNT=\"0.000000\" BILLTYPEID=\"0\" DUEDATE=\"2019-12-16\" ACCOUNTID=\"76\" SLID=\"66\" DBCRTYPE=\"C\" PURCHBILLNO=\"3434\" BILLDATE=\"2019-12-06\" statusid=\"0\" BILLPASS=\" \" PARKED=\"0\" ISAUTH=\"0\" ISCOMPLETE=\"0\" CREATEDBY=\"316\" CREATEDON=\"2019-12-06T09:45:40.210\" ISRELEASE=\"0\" ISACTIVE=\"1\" ADVANCEAMT=\"0.000000\" DOCENTRYTYPEID=\"992\" SELORGSTRUCID=\"0\" PURCHINVCNUMB=\"\" PURCHINVCDATE=\"2019-12-06\" BUID=\"3\" />"
+                        + "</DATA> </DATASET>";
+
+            XmlDocument xml = new XmlDocument();
+            XDocument doc = XDocument.Parse(str);
+
+            foreach (var node in doc.Elements("DATASET").Elements("DATA"))
+            {
+                Console.WriteLine("\n  Element.\n");
+                foreach (var itemEle in node.Elements())
+                {
+                    Console.WriteLine("\n  Line.\n");
+
+                    if (itemEle is XElement)
+                    {
+                        foreach (var item in itemEle.Attributes())
+                        {
+                            Console.WriteLine(item.Name + " : " + item.Value);
+                        }
+                    }
+                }
+                
+            }
+
+
+
+
+            Console.WriteLine("\n\n\nPress any key to exit. \nThank you :)");
+            Console.ReadKey();
+            
+        }
+    }
