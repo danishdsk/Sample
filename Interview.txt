@@ -1,0 +1,34 @@
+Brief about your last project architecture?
+ask about main components of the project
+Question will be asked related to components you worked on in last project?
+How you have interacted with DB in project
+How you authenticate/authorize your requests
+Difference between Abstraction vs Encapsulation with real example
+How you have implemented them in your project
+When to use Abstract class and Interface
+Can we have multiple Abstract classes
+MVC life cycle
+What is Routing
+Suppose we are not able to hit Controller action then how to debug it. Where to put debug point in MVC app.
+Difference between Authentication and Authorization
+Any specific task do you think that went very well in your last project/career for which you feel proud
+What are different possible ways of implementation to reverse the string
+
+Brief introduction about the technologies I used/aware of.
+When to use Abstract class and Interface
+how to call private method of abstract class with child class object
+private constructor & static constructor in same class
+read-only vs constant
+difference between Convert.Tostring() and .toString() method
+MVC life cycle
+Request lifecycle of MVC
+filters in MVC
+how to implement Action filter
+how to implement Exception filter
+What are the return types that Controller action method have?
+How do I get my Web API to return XML instead of Json?
+What is error code for internal server error? what type of error is for 300.
+what is your action plan for if some client send you or by sharing screen some bug/exception in production running application?
+what versions of c# you works on?
+what are latest features c# have?
+Tasks vs multithreading, have you implemented tasks in your project.
